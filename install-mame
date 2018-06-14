@@ -1,0 +1,48 @@
+#!/bin/bash
+# Debian has 3 mame packages:
+# mame
+# mame-data
+# mame-tools
+#
+
+# --- Paths configuration ---
+MAME_BIN_DIR=/home/kodi/bin/
+MAME_STUFF_DIR=/home/kodi/mame/
+MAME_CONFIG_DIR=/home/kodi/.mame/
+
+# --- Create MAME main paths ----------------------------------------------------------------------
+echo "Creating MAME paths ..."
+mkdir -p ${MAME_BIN_DIR}
+mkdir -p ${MAME_STUFF_DIR}
+mkdir -p ${MAME_CONFIG_DIR}
+
+# --- Create secondary paths ---
+echo "Creating RetroArch stuff directories ..."
+mkdir -p ${PATH_RETROARCH_STUFF}/system/             # Option system_directory
+
+# --- Install MAME data ---------------------------------------------------------------------------
+echo "Installing MAME Artwork ..."
+# rm -f ${MAME_STUFF_DIR}/artwork/
+cp -r ./mame/artwork/* ${MAME_STUFF_DIR}/artwork/
+
+echo "Installing MAME bgfx ..."
+cp -r ./mame/bgfx/* ${MAME_STUFF_DIR}/bgfx/
+
+echo "Installing MAME Software Lists XMLs ..."
+cp -r ./mame/hash/* ${MAME_STUFF_DIR}/hash/
+
+echo "Installing MAME keymaps ..."
+cp -r ./mame/keymaps/* ${MAME_STUFF_DIR}/keymaps/
+
+echo "Installing MAME language ..."
+cp -r ./mame/language/* ${MAME_STUFF_DIR}/language/
+
+echo "Installing MAME plugins ..."
+cp -r ./mame/plugins/* ${MAME_STUFF_DIR}/plugins/
+
+echo "Installing MAME samples ..."
+cp -r ./mame/samples/* ${MAME_STUFF_DIR}/samples/
+
+# --- So long and thanks for all the fish ---
+echo "Done"
+exit 0
