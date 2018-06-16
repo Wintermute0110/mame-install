@@ -6,7 +6,7 @@ cd mame
 # Checkout specific tag
 git checkout mame0198
 
-# Compile MAME in a 8-core machine
-make REGENIE=1 -j7
+# Compile MAME in a 4-core machine
+make REGENIE=1 -j5
 
 cd ..
