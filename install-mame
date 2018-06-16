@@ -20,6 +20,10 @@ mkdir -p ${MAME_CONFIG_DIR}
 echo "Installing MAME executable ..."
 cp ./mame/mame64 ${MAME_BIN_DIR}
 
+# --- Copy MAME INI file --------------------------------------------------------------------------
+echo "Installing MAME INI default file ..."
+cp ./mame.ini ${MAME_CONFIG_DIR}
+
 # --- Install MAME data ---------------------------------------------------------------------------
 echo "Installing MAME artwork ..."
 mkdir -p ${MAME_STUFF_DIR}/artwork/
