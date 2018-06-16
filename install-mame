@@ -18,7 +18,7 @@ mkdir -p ${MAME_CONFIG_DIR}
 
 # --- Copy MAME executable ------------------------------------------------------------------------
 echo "Installing MAME executable ..."
-cp -r ./mame/mame64 ${MAME_BIN_DIR}
+cp ./mame/mame64 ${MAME_BIN_DIR}
 
 # --- Install MAME data ---------------------------------------------------------------------------
 echo "Installing MAME artwork ..."
@@ -28,6 +28,20 @@ cp -r ./mame/artwork/* ${MAME_STUFF_DIR}/artwork/
 echo "Installing MAME bgfx ..."
 mkdir -p ${MAME_STUFF_DIR}/bgfx/
 cp -r ./mame/bgfx/* ${MAME_STUFF_DIR}/bgfx/
+
+echo "Installing MAME cheats ..."
+mkdir -p ${MAME_STUFF_DIR}/cheats/
+
+echo "Installing MAME crosshairs ..."
+mkdir -p ${MAME_STUFF_DIR}/crosshairs/
+
+echo "Installing MAME ctrlr ..."
+mkdir -p ${MAME_STUFF_DIR}/ctrlr/
+cp -r ./mame/ctrlr/* ${MAME_STUFF_DIR}/ctrlr/
+
+echo "Installing MAME fonts ..."
+mkdir -p ${MAME_STUFF_DIR}/fonts/
+cp ./mame/uismall.bdf ${MAME_STUFF_DIR}/fonts/uismall.bdf
 
 echo "Installing MAME Software Lists XMLs ..."
 mkdir -p ${MAME_STUFF_DIR}/hash/
