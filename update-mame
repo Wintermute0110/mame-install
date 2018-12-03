@@ -1,6 +1,7 @@
 #!/bin/bash
+# Everytime branches are switched with checkout mame does a clean of the project. Be aware!
 #
 cd mame
 git checkout master
-git pull
+git pull --all
 cd ..
