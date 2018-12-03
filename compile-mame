@@ -7,6 +7,8 @@ cd mame
 git checkout mame0198
 
 # Compile MAME in a 5-core machine
-make -j5
+num_proc=`nproc`
+echo "Using $num_proc processors"
+make -j$num_proc
 
 cd ..

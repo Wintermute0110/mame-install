@@ -4,9 +4,11 @@
 cd mame
 
 # Checkout specific tag
-git checkout mame0198
+git checkout mame0204
 
-# Compile MAME in a 4-core machine
-make REGENIE=1 -j5
+# Compile MAME
+num_proc=`nproc`
+echo "Using $num_proc processors"
+make REGENIE=1 -j$num_proc
 
 cd ..
