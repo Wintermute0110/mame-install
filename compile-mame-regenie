@@ -1,10 +1,11 @@
 #!/bin/bash
 # For info about MAME compilation see http://docs.mamedev.org/
-#
+# It is safe to call this script multiple times (build is not cleaned).
+# If mame source code is updated/pulled build is cleaned.
 cd mame
 
 # Checkout specific tag
-git checkout mame0204
+git checkout mame0205
 
 # Compile MAME
 num_proc=`nproc`

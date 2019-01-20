@@ -4,7 +4,7 @@
 cd mame
 
 # Checkout specific tag
-git checkout mame0198
+git checkout mame0205
 
 # Compile MAME in a 5-core machine
 num_proc=`nproc`
