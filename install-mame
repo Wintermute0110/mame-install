@@ -1,19 +1,16 @@
 #!/bin/bash
 # Debian has 3 mame packages:
-# mame
-# mame-data
-# mame-tools
-#
+# mame, mame-data, mame-tools
 
 # --- Paths configuration ---
 MAME_BIN_DIR=/home/kodi/bin/
-MAME_STUFF_DIR=/home/kodi/bin/mame/
+MAME_INSTALL_DIR=/home/kodi/bin-mame/
 MAME_CONFIG_DIR=/home/kodi/.mame/
 
 # --- Create MAME main paths ----------------------------------------------------------------------
 echo "Creating MAME paths ..."
 mkdir -p ${MAME_BIN_DIR}
-mkdir -p ${MAME_STUFF_DIR}
+mkdir -p ${MAME_INSTALL_DIR}
 mkdir -p ${MAME_CONFIG_DIR}
 
 # --- Copy MAME executable ------------------------------------------------------------------------
@@ -27,46 +24,46 @@ cp ./ui.ini ${MAME_CONFIG_DIR}
 
 # --- Install MAME data ---------------------------------------------------------------------------
 echo "Installing MAME artwork ..."
-mkdir -p ${MAME_STUFF_DIR}/artwork/
-cp -r ./mame/artwork/* ${MAME_STUFF_DIR}/artwork/
+mkdir -p ${MAME_INSTALL_DIR}/artwork/
+cp -r ./mame/artwork/* ${MAME_INSTALL_DIR}/artwork/
 
 echo "Installing MAME bgfx ..."
-mkdir -p ${MAME_STUFF_DIR}/bgfx/
-cp -r ./mame/bgfx/* ${MAME_STUFF_DIR}/bgfx/
+mkdir -p ${MAME_INSTALL_DIR}/bgfx/
+cp -r ./mame/bgfx/* ${MAME_INSTALL_DIR}/bgfx/
 
 echo "Installing MAME cheats ..."
-mkdir -p ${MAME_STUFF_DIR}/cheats/
+mkdir -p ${MAME_INSTALL_DIR}/cheats/
 
 echo "Installing MAME crosshairs ..."
-mkdir -p ${MAME_STUFF_DIR}/crosshairs/
+mkdir -p ${MAME_INSTALL_DIR}/crosshairs/
 
 echo "Installing MAME ctrlr ..."
-mkdir -p ${MAME_STUFF_DIR}/ctrlr/
-cp -r ./mame/ctrlr/* ${MAME_STUFF_DIR}/ctrlr/
+mkdir -p ${MAME_INSTALL_DIR}/ctrlr/
+cp -r ./mame/ctrlr/* ${MAME_INSTALL_DIR}/ctrlr/
 
 echo "Installing MAME fonts ..."
-mkdir -p ${MAME_STUFF_DIR}/fonts/
-cp ./mame/uismall.bdf ${MAME_STUFF_DIR}/fonts/uismall.bdf
+mkdir -p ${MAME_INSTALL_DIR}/fonts/
+cp ./mame/uismall.bdf ${MAME_INSTALL_DIR}/fonts/uismall.bdf
 
 echo "Installing MAME Software Lists XMLs ..."
-mkdir -p ${MAME_STUFF_DIR}/hash/
-cp -r ./mame/hash/* ${MAME_STUFF_DIR}/hash/
+mkdir -p ${MAME_INSTALL_DIR}/hash/
+cp -r ./mame/hash/* ${MAME_INSTALL_DIR}/hash/
 
 echo "Installing MAME keymaps ..."
-mkdir -p ${MAME_STUFF_DIR}/keymaps/
-cp -r ./mame/keymaps/* ${MAME_STUFF_DIR}/keymaps/
+mkdir -p ${MAME_INSTALL_DIR}/keymaps/
+cp -r ./mame/keymaps/* ${MAME_INSTALL_DIR}/keymaps/
 
 echo "Installing MAME language ..."
-mkdir -p ${MAME_STUFF_DIR}/language/
-cp -r ./mame/language/* ${MAME_STUFF_DIR}/language/
+mkdir -p ${MAME_INSTALL_DIR}/language/
+cp -r ./mame/language/* ${MAME_INSTALL_DIR}/language/
 
 echo "Installing MAME plugins ..."
-mkdir -p ${MAME_STUFF_DIR}/plugins/
-cp -r ./mame/plugins/* ${MAME_STUFF_DIR}/plugins/
+mkdir -p ${MAME_INSTALL_DIR}/plugins/
+cp -r ./mame/plugins/* ${MAME_INSTALL_DIR}/plugins/
 
 echo "Installing MAME samples ..."
-mkdir -p ${MAME_STUFF_DIR}/samples/
-cp -r ./mame/samples/* ${MAME_STUFF_DIR}/samples/
+mkdir -p ${MAME_INSTALL_DIR}/samples/
+cp -r ./mame/samples/* ${MAME_INSTALL_DIR}/samples/
 
 # --- So long and thanks for all the fish ---
 echo "Done"
