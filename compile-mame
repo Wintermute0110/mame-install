@@ -1,14 +1,18 @@
 #!/bin/bash
 # For info about MAME compilation see http://docs.mamedev.org/
-#
-cd mame
+
+# Go to MAME source directory
+current_dir=`pwd`
+echo "Current directory $current_dir"
+cd /home/kodi/mame-source/
 
 # Checkout specific tag
 git checkout mame0205
 
-# Compile MAME in a 5-core machine
+# Compile MAME. Detect number of available CPU cores.
 num_proc=`nproc`
-echo "Using $num_proc processors"
+echo "Compile using $num_proc processors"
 make -j$num_proc
 
-cd ..
+# Return to scripts directory
+cd $current_dir

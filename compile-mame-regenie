@@ -1,15 +1,21 @@
 #!/bin/bash
 # For info about MAME compilation see http://docs.mamedev.org/
 # It is safe to call this script multiple times (build is not cleaned).
-# If mame source code is updated/pulled build is cleaned.
-cd mame
+# If mame source code is updated/pulled with git then the build is cleaned.
+
+# Go to MAME source directory
+current_dir=`pwd`
+echo "Current directory $current_dir"
+cd /home/kodi/mame-source/
 
 # Checkout specific tag
 git checkout mame0205
 
-# Compile MAME
+# Compile MAME. Detect number of available CPU cores.
 num_proc=`nproc`
-echo "Using $num_proc processors"
+echo "Compile using $num_proc processors"
+echo "Regenerating MAME configuration"
 make REGENIE=1 -j$num_proc
 
-cd ..
+# Return to scripts directory
+cd $current_dir
