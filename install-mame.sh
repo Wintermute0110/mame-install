@@ -23,7 +23,7 @@ echo "Installing MAME INI default file ..."
 cp mame.ini ${MAME_CONFIG_DIR}
 cp ui.ini ${MAME_CONFIG_DIR}
 cp mame.ini ${MAME_CONFIG_DIR}/mame.ini.initial
-cp ui.ini ${MAME_CONFIG_DIR}/ui.ini.ini.initial
+cp ui.ini ${MAME_CONFIG_DIR}/ui.ini.initial
 
 # --- Install MAME data ---------------------------------------------------------------------------
 echo "Installing MAME artwork ..."
