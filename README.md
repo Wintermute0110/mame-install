@@ -20,10 +20,11 @@ path configurations:
 |------------------------------|-----------------------------|
 | Home folder                  | `/home/kodi/`               |
 | MAME source directory        | `/home/kodi/mame-source/`   |
-| MAME installation directory  | `/home/kodi/bin-mame/`      |
+| MAME runtime files directory | `/home/kodi/bin-mame/`      |
 | MAME executable              | `/home/kodi/bin/mame64`     |
 | MAME config/data directory   | `/home/kodi/.mame/`         |
 | MAME main configuration file | `/home/kodi/.mame/mame.ini` |
+| MAME UI configuration file   | `/home/kodi/.mame/ui.ini`   |
 | MAME Software List hash path | `/home/kodi/bin-mame/hash/` |
 
 Defaults can be edited in the file `configuration` (**not working at the moment, only the defaults
