@@ -13,7 +13,8 @@ possible.
 
 ## Readme me first ##
 
-These scripts assume that the user running MAME is named `kodi` and the following path configuration.
+These scripts assume that the user running MAME is named `kodi` and the following
+path configurations:
 
 | Name                         | Path                        |
 |------------------------------|-----------------------------|
@@ -25,8 +26,8 @@ These scripts assume that the user running MAME is named `kodi` and the followin
 | MAME main configuration file | `/home/kodi/.mame/mame.ini` |
 | MAME Software List hash path | `/home/kodi/bin-mame/hash/` |
 
-Defaults can be edited in the file `configuration` (**not working at the moment, only default
-are valid**):
+Defaults can be edited in the file `configuration` (**not working at the moment, only the defaults
+are currently valid**):
 ```
 # File /home/kodi/MAME-Install/configuration
 #
@@ -53,7 +54,7 @@ $ git clone https://github.com/Wintermute0110/MAME-Install.git
 ```
 
 The MAME compilation tools will be cloned into the directory 
-`/home/kodi/MAME-Install/`.
+`/home/kodi/MAME-Install/`. To update the MAME compilation tools execute `git pull`.
 
 ## Clone and prepare MAME source code ##
 
@@ -63,7 +64,7 @@ $ cd /home/kodi/
 $ git clone https://github.com/mamedev/mame.git mame-source
 ```
 
-Alternatively, you may clone the MAME source code with this commands:
+Alternatively, you may clone the MAME source code like this:
 ```
 $ cd /home/kodi/MAME-Install/
 $ ./clone-mame.sh
@@ -85,6 +86,7 @@ $
 
 Each tag corresponds to a released version of MAME. Now, tell `git` to set the
 MAME source code to the version you want:
+
 ```
 $ cd /home/kodi/mame-source/
 $ git checkout mame0207
@@ -128,7 +130,7 @@ This script will create a default configuration file ...
 
 ## Update MAME ##
 
-Update the MAME source code:
+First update the MAME source code:
 ```
 $ cd /home/kodi-source/
 $ git checkout master
