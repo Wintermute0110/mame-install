@@ -13,11 +13,11 @@ possible.
 
 ## Readme me first ##
 
-These scripts assume that the user running MAME is named `kodi` and the following
-path configurations:
+These scripts assume the following configuration:
 
 | Name                         | Path                        |
 |------------------------------|-----------------------------|
+| User name                    | `kodi`                      |
 | Home folder                  | `/home/kodi/`               |
 | MAME source directory        | `/home/kodi/mame-source/`   |
 | MAME runtime files directory | `/home/kodi/bin-mame/`      |
