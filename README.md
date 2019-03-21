@@ -133,7 +133,7 @@ This script will create a default configuration file ...
 
 First update the MAME source code:
 ```
-$ cd /home/kodi-source/
+$ cd /home/mame-source/
 $ git checkout master
 $ git pull
 ```
