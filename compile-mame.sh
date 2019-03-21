@@ -6,9 +6,6 @@ current_dir=`pwd`
 echo "Current directory $current_dir"
 cd /home/kodi/mame-source/
 
-# Checkout specific tag
-git checkout mame0205
-
 # Compile MAME. Detect number of available CPU cores.
 num_proc=`nproc`
 echo "Compile using $num_proc processors"
