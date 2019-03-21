@@ -1,6 +1,7 @@
 # Compile and install MAME on Debian/Ubuntu distributions #
 
-Scripts to compile and install MAME in Linux Debian/Ubuntu distributions.
+Scripts to compile and install MAME in Linux Debian/Ubuntu distributions in a way as easy as
+possible.
 
 ## Table of Contents
 
@@ -24,7 +25,8 @@ These scripts assume that the user running MAME is named `kodi` and the followin
 | MAME main configuration file | `/home/kodi/.mame/mame.ini` |
 | MAME Software List hash path | `/home/kodi/bin-mame/hash/` |
 
-Defaults can be edited in the file `configuration`:
+Defaults can be edited in the file `configuration` (**not working at the moment, only default
+are valid**):
 ```
 # File /home/kodi/MAME-Install/configuration
 #
@@ -75,7 +77,6 @@ $ git tag
 mame0121
 mame0121u1
 ...
-mame0205
 mame0206
 mame0207
 ...
@@ -91,13 +92,13 @@ $ git checkout mame0207
 
 The MAME source code is now ready for compilation.
 
-## Compile and installing Kodi for the first time ##
+## Compile and installing MAME for the first time ##
 
-First you need to install the build dependencies required to compile Kodi.
+First you need to install the build dependencies required to compile MAME.
 As `root` execute:
 ```
 # cd /home/kodi/MAME-Install/
-# ./install-build-deps.sh.sh
+# ./install-build-deps.sh
 ```
 
 Before compilation, you may want to verify if the MAME source is set to the version you want:
@@ -144,9 +145,10 @@ Then configure, compile and install MAME again:
 ```
 $ cd /home/kodi/MAME-Install/
 $ ./display-mame-source-version.sh
-$ ./install-mame.sh
+$ ./compile-mame-regenie.sh
 $ ./install-mame.sh
 ```
 
 ## Notes ##
 
+Nothing at the moment.
