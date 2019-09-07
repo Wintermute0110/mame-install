@@ -133,7 +133,7 @@ This script will create a default configuration file ...
 
 First update the MAME source code:
 ```
-$ cd /home/mame-source/
+$ cd /home/kodi/mame-source/
 $ git checkout master
 $ git pull
 ```
@@ -141,7 +141,7 @@ $ git pull
 If you wish to set a specific version (remember to use `git tag` to see a list of the 
 available MAME releases):
 ```
-$ git checkout mame-0207
+$ git checkout mame0213
 ```
 
 Then configure, compile and install MAME again:
