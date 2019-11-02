@@ -67,7 +67,3 @@ cp -r ${MAME_SOURCE_DIR}/plugins/* ${MAME_INSTALL_DIR}/plugins/
 echo "Installing MAME samples ..."
 mkdir -p ${MAME_INSTALL_DIR}/samples/
 cp -r ${MAME_SOURCE_DIR}/samples/* ${MAME_INSTALL_DIR}/samples/
-
-# --- So long and thanks for all the fish ---
-echo "Done"
-exit 0
