@@ -101,13 +101,13 @@ First you need to install the build dependencies required to compile MAME.
 As `root` execute:
 ```
 # cd /home/kodi/MAME-Install/
-# ./install-build-deps.sh
+# ./setup-build-deps.sh
 ```
 
 Before compilation, you may want to verify if the MAME source is set to the version you want:
 ```
 $ cd /home/kodi/MAME-Install/
-$ ./display-mame-source-version.sh
+$ ./display-mame-source-status.sh
 Current directory /home/kodi/MAME-Install
 HEAD detached at mame0207
 nothing to commit, working tree clean
