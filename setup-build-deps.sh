@@ -8,4 +8,4 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Install build dependencies
-apt-get install git build-essential libsdl2-dev libsdl2-ttf-dev libfontconfig-dev qt5-default
+apt-get install git build-essential libsdl2-dev libsdl2-ttf-dev libfontconfig-dev qt5-default python2
