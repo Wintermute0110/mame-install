@@ -3,7 +3,8 @@
 source configuration.sh
 current_dir=`pwd`
 echo "Current directory $current_dir"
-cd /home/kodi/mame-source/
+echo "MAME source directory $MAME_SOURCE_DIR"
+cd $MAME_SOURCE_DIR
 git checkout master
 git pull --all
 cd $current_dir

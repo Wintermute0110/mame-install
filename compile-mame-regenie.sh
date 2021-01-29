@@ -6,10 +6,13 @@
 # https://github.com/mamedev/mame/issues/5161
 # https://github.com/mamedev/mame/issues/4953
 
+# Include configuration variables
+source configuration.sh
+
 # Go to MAME source directory
 current_dir=`pwd`
 echo "Current directory $current_dir"
-cd /home/kodi/mame-source/
+cd $MAME_SOURCE_DIR
 
 # Compile MAME. Detect number of available CPU cores.
 num_proc=`nproc`

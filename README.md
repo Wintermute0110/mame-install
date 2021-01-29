@@ -126,20 +126,14 @@ This script will create a default configuration file ...
 
 First update the MAME source code:
 ```
-$ cd /home/kodi/mame-source/
-$ git checkout master
-$ git pull
+$ cd /home/kodi/MAME-Install/
+$ ./update-mame-source-code.sh
 ```
 
-If you wish to set a specific version (remember to use `git tag` to see a list of the 
-available MAME releases):
-```
-$ git checkout mame0213
-```
-
-Then configure, compile and install MAME again:
+If you wish to set a specific version have a look at the tags with `display-mame-source-git-tags.sh`, then edit `configuration.sh` to the tag you wish to compile. Finally, compile MAME and install:
 ```
 $ cd /home/kodi/MAME-Install/
+$ ./set-mame-source-version.sh
 $ ./display-mame-source-version.sh
 $ ./compile-mame-regenie.sh
 $ ./install-mame.sh
