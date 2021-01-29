@@ -1,8 +1,7 @@
 #!/bin/bash
 # Everytime branches are switched with checkout mame does a clean of the project. Be aware!
-#
-mame_source_dir=/home/kodi/mame-source/
+source configuration.sh
 current_dir=`pwd`
 echo "Current directory $current_dir"
-echo "MAME source directory $mame_source_dir"
-git -C $mame_source_dir status
+echo "MAME source directory $MAME_SOURCE_DIR"
+git -C $MAME_SOURCE_DIR status

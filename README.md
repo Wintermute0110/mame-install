@@ -13,33 +13,20 @@ possible.
 
 ## Readme me first ##
 
-These scripts assume the following configuration:
+The default configuration assumes that the UNIX user running MAME is named `kodi` and hence the home directory is `/home/kodi/`. However, you can change this to suit your needs. Remember to change all directory names from `/home/kodi/` to `/home/$USERNAME/`.
 
-| Name                         | Path                        |
-|------------------------------|-----------------------------|
-| User name                    | `kodi`                      |
-| Home folder                  | `/home/kodi/`               |
-| MAME source directory        | `/home/kodi/mame-source/`   |
-| MAME runtime files directory | `/home/kodi/bin-mame/`      |
-| MAME executable              | `/home/kodi/bin/mame64`     |
-| MAME config/data directory   | `/home/kodi/.mame/`         |
-| MAME main configuration file | `/home/kodi/.mame/mame.ini` |
-| MAME UI configuration file   | `/home/kodi/.mame/ui.ini`   |
-| MAME Software List hash path | `/home/kodi/bin-mame/hash/` |
-
-Defaults can be edited in the file `configuration` (**not working at the moment, only the defaults
-are currently valid**):
+The default paths can be edited in the file `configuration.sh`. For the time being do not use spaces in the directory names:
 ```
 # File /home/kodi/MAME-Install/configuration
-#
-MAME_USER=kodi
+
+MAME_GIT_TAG=mame0228
 MAME_SOURCE_DIR=/home/kodi/mame-source/
-MAME_INSTALL_DIR=/home/kodi/bin-mame/
+MAME_INSTALL_DIR=/home/kodi/mame-bin/
+MAME_BIN_DIR=/home/kodi/bin/
 MAME_CONFIG_DIR=/home/kodi/.mame/
-MAME_EXEC_PATH=/home/kodi/bin/
 ```
 
-Once compiled and installed, the MAME executable is located in `/home/kodi/bin/mame64`.
+`MAME_SOURCE_DIR` is the directory where the MAME source code will be cloned. `MAME_INSTALL_DIR` is the directory where the MAME runtime files will be installed. `MAME_BIN_DIR` is the directory to place the MAME executable. Finally, `MAME_CONFIG_DIR` is the directory to store the MAME configuration. Do not change `MAME_CONFIG_DIR` unless you know what is doing. Once compiled and installed, the MAME executable is located in `/home/kodi/bin/mame64`.
 
 ## Cloning this repository ##
 
@@ -54,8 +41,7 @@ $ cd /home/kodi/
 $ git clone https://github.com/Wintermute0110/MAME-Install.git
 ```
 
-The MAME compilation tools will be cloned into the directory 
-`/home/kodi/MAME-Install/`. To update the MAME compilation tools execute `git pull`.
+The MAME compilation tools will be cloned into the directory `/home/kodi/MAME-Install/`. To update the MAME compilation tools execute `git pull`.
 
 ## Clone and prepare MAME source code ##
 
@@ -71,34 +57,43 @@ $ cd /home/kodi/MAME-Install/
 $ ./clone-mame.sh
 ```
 
-If you want to compile a particular version of MAME first have a look at the
-tags in the repository:
+If you want to compile a particular version of MAME first have a look at the tags in the repository:
 ```
-$ cd /home/kodi/mame-source/
-$ git tag
+$ cd /home/kodi/MAME-Install/
+$ ./display-mame-source-git-tags.sh
 mame0121
 mame0121u1
 ...
 mame0206
-mame0207
-...
-$ 
+mame0228
 ```
 
-Each tag corresponds to a released version of MAME. Now, tell `git` to set the
-MAME source code to the version you want:
-
+Each tag corresponds to a released version of MAME. Now, edit `configuration.sh` and change the `MAME_GIT_TAG`:
 ```
-$ cd /home/kodi/mame-source/
-$ git checkout mame0207
+MAME_GIT_TAG=mame0228
 ```
 
-The MAME source code is now ready for compilation.
+If you want to compile to most up-to-date development version use the tag `master`. Now, set the MAME source code to the configured:
+```
+$ cd /home/kodi/MAME-Install/
+$ ./set-mame-source-version.sh
+```
+
+At any moment you can check the status of the MAME source code with:
+```
+$ cd /home/kodi/MAME-Install/
+$ ./display-mame-source-status.sh
+Current directory /home/kodi/mame-install
+MAME source directory /home/kodi/mame-source/
+HEAD detached at mame0228
+nothing to commit, working tree clean
+```
+
+In this example git is telling that the MAME source code is set to tag `mame0228`. The MAME source code is now ready for compilation.
 
 ## Compile and installing MAME for the first time ##
 
-First you need to install the build dependencies required to compile MAME.
-As `root` execute:
+First you need to install the build dependencies required to compile MAME. As user `root` execute:
 ```
 # cd /home/kodi/MAME-Install/
 # ./setup-build-deps.sh
@@ -109,13 +104,11 @@ Before compilation, you may want to verify if the MAME source is set to the vers
 $ cd /home/kodi/MAME-Install/
 $ ./display-mame-source-status.sh
 Current directory /home/kodi/MAME-Install
-HEAD detached at mame0207
+HEAD detached at mame0228
 nothing to commit, working tree clean
 ```
 
-In this example, the MAME source code is set to version `0.207`.
-
-Now it's time to compile MAME. This will take a while (between 1 and 2 hours on a fast computer):
+In this example, the MAME source code is set to version `0.228`. Now it's time to compile MAME. This will take a while (between 1 and 2 hours on a fast computer):
 ```
 $ cd /home/kodi/MAME-Install/
 $ ./compile-mame-regenie.sh

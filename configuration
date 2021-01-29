@@ -1,7 +1,0 @@
-# File /home/kodi/MAME-Install/configuration
-#
-MAME_USER=kodi
-MAME_SOURCE_DIR=/home/kodi/mame-source/
-MAME_INSTALL_DIR=/home/kodi/bin-mame/
-MAME_CONFIG_DIR=/home/kodi/.mame/
-MAME_EXEC_PATH=/home/kodi/bin/
