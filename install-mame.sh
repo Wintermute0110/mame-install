@@ -16,8 +16,10 @@ mkdir -p ${MAME_INSTALL_DIR}
 mkdir -p ${MAME_CONFIG_DIR}
 
 # --- Copy MAME executable ------------------------------------------------------------------------
+# https://stackoverflow.com/questions/14888012/how-to-rsync-a-single-file
 echo "Installing MAME executable..."
-cp ${MAME_SOURCE_DIR}/mame64 ${MAME_BIN_DIR}
+# cp ${MAME_SOURCE_DIR}/mame64 ${MAME_BIN_DIR}
+rsync -a ${MAME_SOURCE_DIR}/mame64 ${MAME_BIN_DIR}
 
 # --- Copy MAME INI file --------------------------------------------------------------------------
 echo "Installing MAME INI default file..."
@@ -29,11 +31,13 @@ cp ui.ini ${MAME_CONFIG_DIR}/ui.ini.initial
 # --- Install MAME data ---------------------------------------------------------------------------
 echo "Installing MAME artwork..."
 mkdir -p ${MAME_INSTALL_DIR}/artwork/
-cp -r ${MAME_SOURCE_DIR}/artwork/* ${MAME_INSTALL_DIR}/artwork/
+# cp -r ${MAME_SOURCE_DIR}/artwork/* ${MAME_INSTALL_DIR}/artwork/
+rsync -a ${MAME_SOURCE_DIR}/artwork/ ${MAME_INSTALL_DIR}/artwork/
 
 echo "Installing MAME bgfx..."
 mkdir -p ${MAME_INSTALL_DIR}/bgfx/
-cp -r ${MAME_SOURCE_DIR}/bgfx/* ${MAME_INSTALL_DIR}/bgfx/
+# cp -r ${MAME_SOURCE_DIR}/bgfx/* ${MAME_INSTALL_DIR}/bgfx/
+rsync -a ${MAME_SOURCE_DIR}/bgfx/ ${MAME_INSTALL_DIR}/bgfx/
 
 echo "Installing MAME cheats..."
 mkdir -p ${MAME_INSTALL_DIR}/cheats/
@@ -43,7 +47,8 @@ mkdir -p ${MAME_INSTALL_DIR}/crosshairs/
 
 echo "Installing MAME ctrlr..."
 mkdir -p ${MAME_INSTALL_DIR}/ctrlr/
-cp -r ${MAME_SOURCE_DIR}/ctrlr/* ${MAME_INSTALL_DIR}/ctrlr/
+# cp -r ${MAME_SOURCE_DIR}/ctrlr/* ${MAME_INSTALL_DIR}/ctrlr/
+rsync -a ${MAME_SOURCE_DIR}/ctrlr/ ${MAME_INSTALL_DIR}/ctrlr/
 
 echo "Installing MAME fonts..."
 mkdir -p ${MAME_INSTALL_DIR}/fonts/
@@ -51,20 +56,25 @@ cp ${MAME_SOURCE_DIR}/uismall.bdf ${MAME_INSTALL_DIR}/fonts/uismall.bdf
 
 echo "Installing MAME Software Lists XMLs..."
 mkdir -p ${MAME_INSTALL_DIR}/hash/
-cp -r ${MAME_SOURCE_DIR}/hash/* ${MAME_INSTALL_DIR}/hash/
+# cp -r ${MAME_SOURCE_DIR}/hash/* ${MAME_INSTALL_DIR}/hash/
+rsync -a ${MAME_SOURCE_DIR}/hash/ ${MAME_INSTALL_DIR}/hash/
 
 echo "Installing MAME keymaps..."
 mkdir -p ${MAME_INSTALL_DIR}/keymaps/
-cp -r ${MAME_SOURCE_DIR}/keymaps/* ${MAME_INSTALL_DIR}/keymaps/
+# cp -r ${MAME_SOURCE_DIR}/keymaps/* ${MAME_INSTALL_DIR}/keymaps/
+rsync -a ${MAME_SOURCE_DIR}/keymaps/ ${MAME_INSTALL_DIR}/keymaps/
 
 echo "Installing MAME language..."
 mkdir -p ${MAME_INSTALL_DIR}/language/
-cp -r ${MAME_SOURCE_DIR}/language/* ${MAME_INSTALL_DIR}/language/
+# cp -r ${MAME_SOURCE_DIR}/language/* ${MAME_INSTALL_DIR}/language/
+rsync -a ${MAME_SOURCE_DIR}/language/ ${MAME_INSTALL_DIR}/language/
 
 echo "Installing MAME plugins..."
 mkdir -p ${MAME_INSTALL_DIR}/plugins/
-cp -r ${MAME_SOURCE_DIR}/plugins/* ${MAME_INSTALL_DIR}/plugins/
+# cp -r ${MAME_SOURCE_DIR}/plugins/* ${MAME_INSTALL_DIR}/plugins/
+rsync -a ${MAME_SOURCE_DIR}/plugins/ ${MAME_INSTALL_DIR}/plugins/
 
 echo "Installing MAME samples..."
 mkdir -p ${MAME_INSTALL_DIR}/samples/
-cp -r ${MAME_SOURCE_DIR}/samples/* ${MAME_INSTALL_DIR}/samples/
+# cp -r ${MAME_SOURCE_DIR}/samples/* ${MAME_INSTALL_DIR}/samples/
+rsync -a ${MAME_SOURCE_DIR}/samples/ ${MAME_INSTALL_DIR}/samples/
