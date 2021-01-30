@@ -13,11 +13,9 @@ possible.
 
 ## Readme me first ##
 
-The default configuration assumes that the UNIX user running MAME is named `kodi` and hence the home directory is `/home/kodi/`. However, you can change this to suit your needs. Remember to change all directory names from `/home/kodi/` to `/home/$USERNAME/`.
-
-The default paths can be edited in the file `configuration.sh`. For the time being do not use spaces in the directory names:
+The default configuration assumes that the UNIX user running MAME is named `kodi` and hence the home directory is `/home/kodi/`. The default paths can be edited in the file `configuration.sh`. For the time being do not use spaces in the directory names. You can change the defaults to suit your needs. If you do so, remember to change all directory names from `/home/kodi/` to `/home/$USERNAME/` through this guide.
 ```
-# File /home/kodi/MAME-Install/configuration
+# File /home/kodi/MAME-Install/configuration.sh
 
 MAME_GIT_TAG=mame0228
 MAME_SOURCE_DIR=/home/kodi/mame-source/
@@ -62,7 +60,6 @@ If you want to compile a particular version of MAME first have a look at the tag
 $ cd /home/kodi/MAME-Install/
 $ ./display-mame-source-git-tags.sh
 mame0121
-mame0121u1
 ...
 mame0206
 mame0228
@@ -73,7 +70,7 @@ Each tag corresponds to a released version of MAME. Now, edit `configuration.sh`
 MAME_GIT_TAG=mame0228
 ```
 
-If you want to compile to most up-to-date development version use the tag `master`. Now, set the MAME source code to the configured:
+If you want to compile to most up-to-date development version use the tag `master`. Now, set the MAME source code to the tag configured:
 ```
 $ cd /home/kodi/MAME-Install/
 $ ./set-mame-source-version.sh
