@@ -22,10 +22,14 @@ echo "Installing MAME executable..."
 rsync -a ${MAME_SOURCE_DIR}/mame64 ${MAME_BIN_DIR}
 
 # --- Copy MAME INI file --------------------------------------------------------------------------
-echo "Installing MAME INI default file..."
+echo "Installing MAME configuration files..."
+echo "Config file mame.ini"
 cp mame.ini ${MAME_CONFIG_DIR}
+echo "Config file ui.ini"
 cp ui.ini ${MAME_CONFIG_DIR}
+echo "Config file mame.ini.initial"
 cp mame.ini ${MAME_CONFIG_DIR}/mame.ini.initial
+echo "Config file ui.ini.initial"
 cp ui.ini ${MAME_CONFIG_DIR}/ui.ini.initial
 
 # --- Install MAME data ---------------------------------------------------------------------------
