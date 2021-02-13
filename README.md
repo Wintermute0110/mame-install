@@ -26,6 +26,17 @@ MAME_CONFIG_DIR=/home/kodi/.mame/
 
 `MAME_SOURCE_DIR` is the directory where the MAME source code will be cloned. `MAME_INSTALL_DIR` is the directory where the MAME runtime files will be installed. `MAME_BIN_DIR` is the directory to place the MAME executable. Finally, `MAME_CONFIG_DIR` is the directory to store the MAME configuration. Do not change `MAME_CONFIG_DIR` unless you know what is doing. Once compiled and installed, the MAME executable is located in `/home/kodi/bin/mame64`.
 
+The shipped `mame.ini` and `ui.ini` assume you use the following paths. If you want to change the defaults paths remember to edit these configuration files.
+```
+/home/kodi/MAME-ROMs     -> Directory for MAME ROMs
+/home/kodi/MAME-CHDs     -> Directory for MAME CHDs
+/home/kodi/MAME-SL-ROMs  -> Directory for Software List ROMs
+/home/kodi/MAME-SL-CHDs  -> Directory for Software List ROMs
+/home/kodi/MAME-assets   -> Directory for MAME assets (snaps, titles, etc.)
+/home/kodi/MAME-DATs     -> Directory for MAME DAT and INI files
+/home/kodi/MAME-samples  -> Directory for sample ZIP files.
+```
+
 ## Cloning this repository ##
 
 If you don't have `git` installed then execute as `root` user:
