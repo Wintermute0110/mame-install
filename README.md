@@ -15,7 +15,7 @@ possible.
 
 The default configuration assumes that the UNIX user running MAME is named `kodi` and hence the home directory is `/home/kodi/`. The default paths can be edited in the file `configuration.sh`. For the time being do not use spaces in the directory names. You can change the defaults to suit your needs. If you do so, remember to change all directory names from `/home/kodi/` to `/home/$USERNAME/` through this guide.
 ```
-# File /home/kodi/MAME-Install/configuration.sh
+# File /home/kodi/mame-install/configuration.sh
 
 MAME_GIT_TAG=mame0228
 MAME_SOURCE_DIR=/home/kodi/mame-source/
@@ -117,7 +117,7 @@ $ cd /home/kodi/MAME-Install/
 $ ./install-mame.sh
 ```
 
-This script will create a default configuration file ...
+This script will create a default configuration files in `$MAME_CONFIG_DIR/mame.ini` and `$MAME_CONFIG_DIR/ui.ini`. If you change the default paths in `configuration.sh` do not forget to edit `mame.ini` and `ui.ini` to reflect those changes, otherwise MAME won't work.
 
 ## Update MAME ##
 
@@ -138,4 +138,24 @@ $ ./install-mame.sh
 
 ## Notes ##
 
-Nothing at the moment.
+If you experience any kind of problem with MAME, for example MAME freezes when loading ROMs at the beginning, the reason could be that the shipped configuration files `mame.ini` and `ui.ini` are old (or new if you are compiling an old version or MAME). Follow these steps to update the configuration files:
+
+**Step 1** Delete the installed configuration files.
+```
+$ rm /home/kodi/.mame/mame.ini
+$ rm /home/kodi/.mame/ui.ini
+```
+
+**Step 2** Create new configuration files `/home/kodi/.mame/mame.ini` and `/home/kodi/.mame/ui.ini` for the current version of MAME.
+```
+$ mame64 -createconfig
+```
+
+**Step 3** Customize the configuration files `mame.ini` and `ui.ini` to set the directories for your ROMs, etc. You can see the changes of the shipped configuration files with respect to the original or vanilla files using the following commands.
+```
+$ cd /home/kodi/MAME-Install/
+$ diff -u --color mame.ini.vanilla mame.ini
+$ diff -u --color ui.ini.vanilla ui.ini
+```
+
+If you want to make these changes permanent then copy your customized files to directory `/home/kodi/mame-install`. Otherwise `mame.ini` and `ui.ini` in `/home/kodi/.mame/` will be overwritten when you execute `install-mame.sh`.
