@@ -7,30 +7,30 @@ writeconfig               0
 #
 # CORE SEARCH PATH OPTIONS
 #
-homepath                  /home/kodi/.mame
-rompath                   /home/kodi/MAME-ROMs;/home/kodi/MAME-CHDs;/home/kodi/MAME-SL-ROMs;/home/kodi/MAME-SL-CHDs
-hashpath                  /home/kodi/mame-bin/hash
-samplepath                /home/kodi/mame-bin/samples;/home/kodi/MAME-samples
-artpath                   /home/kodi/mame-bin/artwork;/home/kodi/MAME-assets/artwork
-ctrlrpath                 /home/kodi/mame-bin/ctrlr
-inipath                   /home/kodi/.mame
-fontpath                  /home/kodi/mame-bin/fonts
-cheatpath                 /home/kodi/mame-bin/cheats
-crosshairpath             /home/kodi/mame-bin/crosshairs
-pluginspath               /home/kodi/mame-bin/plugins
-languagepath              /home/kodi/mame-bin/language
-swpath                    /home/kodi/MAME-SL-ROMs
+homepath                  .
+rompath                   roms
+hashpath                  hash
+samplepath                samples
+artpath                   artwork
+ctrlrpath                 ctrlr
+inipath                   $HOME/.mame;.;ini
+fontpath                  .
+cheatpath                 cheat
+crosshairpath             crosshair
+pluginspath               plugins
+languagepath              language
+swpath                    software
 
 #
 # CORE OUTPUT DIRECTORY OPTIONS
 #
-cfg_directory             /home/kodi/.mame/cfg
-nvram_directory           /home/kodi/.mame/nvram
-input_directory           /home/kodi/.mame/inp
-state_directory           /home/kodi/.mame/sta
-snapshot_directory        /home/kodi/MAME-assets/snaps
-diff_directory            /home/kodi/.mame/diff
-comment_directory         /home/kodi/.mame/comments
+cfg_directory             cfg
+nvram_directory           nvram
+input_directory           inp
+state_directory           sta
+snapshot_directory        snap
+diff_directory            diff
+comment_directory         comments
 
 #
 # CORE STATE/PLAYBACK OPTIONS
@@ -250,7 +250,7 @@ bench                     0
 #
 # OSD VIDEO OPTIONS
 #
-video                     opengl
+video                     auto
 numscreens                1
 window                    0
 maximize                  1
@@ -290,8 +290,8 @@ switchres                 0
 #
 # OSD ACCELERATED VIDEO OPTIONS
 #
-filter                    0
-prescale                  2
+filter                    1
+prescale                  1
 
 #
 # OpenGL-SPECIFIC OPTIONS

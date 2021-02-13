@@ -1,18 +1,18 @@
 ﻿#
 # UI SEARCH PATH OPTIONS
 #
-historypath               /home/kodi/.mame/history;/home/kodi/MAME-DATs
-categorypath              /home/kodi/MAME-DATs
-cabinets_directory        /home/kodi/MAME-assets/cabinets
-cpanels_directory         /home/kodi/MAME-assets/cpanels
-pcbs_directory            /home/kodi/MAME-assets/PCBs
-flyers_directory          /home/kodi/MAME-assets/flyers
-titles_directory          /home/kodi/MAME-assets/titles
+historypath               history;dats;.
+categorypath              folders
+cabinets_directory        cabinets;cabdevs
+cpanels_directory         cpanel
+pcbs_directory            pcb
+flyers_directory          flyers
+titles_directory          titles
 ends_directory            ends
-marquees_directory        /home/kodi/MAME-assets/marquees
-artwork_preview_directory /home/kodi/MAME-assets/artpreviews
+marquees_directory        marquees
+artwork_preview_directory "artwork preview;artpreview"
 bosses_directory          bosses
-logos_directory           /home/kodi/MAME-assets/clearlogos
+logos_directory           logo
 scores_directory          scores
 versus_directory          versus
 gameover_directory        gameover
@@ -20,7 +20,7 @@ howto_directory           howto
 select_directory          select
 icons_directory           icons
 covers_directory          covers
-ui_path                   /home/kodi/.mame/ui
+ui_path                   ui
 
 #
 # UI MISC OPTIONS
