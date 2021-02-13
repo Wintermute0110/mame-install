@@ -13,7 +13,7 @@ possible.
 
 ## Readme me first ##
 
-The default configuration assumes that the UNIX user running MAME is named `kodi` and hence the home directory is `/home/kodi/`. The default paths can be edited in the file `configuration.sh`. For the time being do not use spaces in the directory names. You can change the defaults to suit your needs. If you do so, remember to change all directory names from `/home/kodi/` to `/home/$USERNAME/` through this guide.
+The default configuration assumes that the UNIX user running MAME is named `kodi` and hence the home directory is `/home/kodi/`. The default paths can be edited in the file `configuration.sh` to suit your needs. If you do so, remember to change all directory names from `/home/kodi/` to `/home/$USERNAME/` through this guide. For the time being do not use spaces in the directory names.
 ```
 # File /home/kodi/mame-install/configuration.sh
 
@@ -24,17 +24,17 @@ MAME_BIN_DIR=/home/kodi/bin/
 MAME_CONFIG_DIR=/home/kodi/.mame/
 ```
 
-`MAME_SOURCE_DIR` is the directory where the MAME source code will be cloned. `MAME_INSTALL_DIR` is the directory where the MAME runtime files will be installed. `MAME_BIN_DIR` is the directory to place the MAME executable. Finally, `MAME_CONFIG_DIR` is the directory to store the MAME configuration. Do not change `MAME_CONFIG_DIR` unless you know what is doing. Once compiled and installed, the MAME executable is located in `/home/kodi/bin/mame64`.
+`MAME_SOURCE_DIR` is the directory where the MAME source code will be cloned from Github. `MAME_INSTALL_DIR` is the directory where the MAME runtime files will be installed. `MAME_BIN_DIR` is the directory to place the MAME executable. Finally, `MAME_CONFIG_DIR` is the directory to store the MAME configuration. Do not change `MAME_CONFIG_DIR` unless you know what you are doing. Once compiled and installed, the MAME executable will be located in `/home/kodi/bin/mame64`.
 
 The shipped `mame.ini` and `ui.ini` assume you use the following paths. If you want to change the defaults paths remember to edit these configuration files.
 ```
-/home/kodi/MAME-ROMs     -> Directory for MAME ROMs
-/home/kodi/MAME-CHDs     -> Directory for MAME CHDs
-/home/kodi/MAME-SL-ROMs  -> Directory for Software List ROMs
-/home/kodi/MAME-SL-CHDs  -> Directory for Software List ROMs
-/home/kodi/MAME-assets   -> Directory for MAME assets (snaps, titles, etc.)
-/home/kodi/MAME-DATs     -> Directory for MAME DAT and INI files
-/home/kodi/MAME-samples  -> Directory for sample ZIP files.
+/home/kodi/MAME-ROMs      Directory for MAME ROMs
+/home/kodi/MAME-CHDs      Directory for MAME CHDs
+/home/kodi/MAME-SL-ROMs   Directory for Software List ROMs
+/home/kodi/MAME-SL-CHDs   Directory for Software List ROMs
+/home/kodi/MAME-assets    Directory for MAME assets (snaps, titles, etc.)
+/home/kodi/MAME-DATs      Directory for MAME DAT and INI files
+/home/kodi/MAME-samples   Directory for sample ZIP files.
 ```
 
 ## Cloning this repository ##
@@ -116,7 +116,7 @@ HEAD detached at mame0228
 nothing to commit, working tree clean
 ```
 
-In this example, the MAME source code is set to version `0.228`. Now it's time to compile MAME. This will take a while (between 1 and 2 hours on a fast computer):
+In this example, the MAME source code is set to version `0.228`. Now it's time to compile MAME. This will take a while, at least 1 hour on a fast computer and up to several hours in low-end devices such as a Raspberry Pi. The compilation will use all the available CPU cores on your machine:
 ```
 $ cd /home/kodi/MAME-Install/
 $ ./compile-mame-regenie.sh
@@ -162,11 +162,11 @@ $ rm /home/kodi/.mame/ui.ini
 $ mame64 -createconfig
 ```
 
-**Step 3** Customize the configuration files `mame.ini` and `ui.ini` to set the directories for your ROMs, etc. You can see the changes of the shipped configuration files with respect to the original or vanilla files using the following commands.
+**Step 3** Customize the configuration files `mame.ini` and `ui.ini` to set the directories for your ROMs, etc. You can see the changes of the shipped configuration files with respect to the original files using the following commands.
 ```
 $ cd /home/kodi/MAME-Install/
 $ diff -u --color mame.ini.vanilla mame.ini
 $ diff -u --color ui.ini.vanilla ui.ini
 ```
 
-If you want to make these changes permanent then copy your customized files to directory `/home/kodi/mame-install`. Otherwise `mame.ini` and `ui.ini` in `/home/kodi/.mame/` will be overwritten when you execute `install-mame.sh`.
+If you want to make these changes permanent then copy your customized files to directory `/home/kodi/mame-install`. Otherwise `mame.ini` and `ui.ini` in `/home/kodi/.mame/` will be overwritten every time you execute `install-mame.sh`.
