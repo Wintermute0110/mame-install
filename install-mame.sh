@@ -2,6 +2,11 @@
 # Debian has 3 mame packages:
 # mame, mame-data, mame-tools
 
+rmecho () {
+  echo "Deleting file $1"
+  rm $1
+}
+
 # --- Paths configuration ---
 source configuration.sh
 echo "MAME source directory $MAME_SOURCE_DIR"
@@ -82,3 +87,37 @@ echo "Installing MAME samples..."
 mkdir -p ${MAME_INSTALL_DIR}/samples/
 # cp -r ${MAME_SOURCE_DIR}/samples/* ${MAME_INSTALL_DIR}/samples/
 rsync -a ${MAME_SOURCE_DIR}/samples/ ${MAME_INSTALL_DIR}/samples/
+
+# --- Delete weird shaders
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/lut.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/pillarbox_left_horizontal.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/pillarbox_left_vertical.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/pillarbox_right_horizontal.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/pillarbox_right_vertical.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/unfiltered.json
+
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/super-2xbr-3d-2p.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/super-2xbr-3d-3p-smoother.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/super-4xbr-3d-4p.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/super-4xbr-3d-6p-smoother.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/super-xbr-2p.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/super-xbr-3p-smoother.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/super-xbr-6p.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/super-xbr-deposterize.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/super-xbr-fast-3p.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/super-xbr-fast-6p.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-hybrid.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-lv1-noblend.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-lv2-3d.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-lv2-accuracy-multipass.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-lv2-accuracy-smart-blur.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-lv2-deposterize.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-lv2-fast.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-lv2.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-lv2-multipass.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-lv2-noblend.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-lv3.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-lv3-multipass.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-lv3-noblend.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-mlv4-dilation.json
+rmecho ${MAME_INSTALL_DIR}/bgfx/chains/xbr/xbr-mlv4-multipass.json
