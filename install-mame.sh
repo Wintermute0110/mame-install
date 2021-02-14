@@ -3,8 +3,13 @@
 # mame, mame-data, mame-tools
 
 rmecho () {
-  echo "Deleting file $1"
+  echo "Deleting $1"
   rm $1
+}
+
+copyecho () {
+  echo "Copying $1 into $2"
+  cp "$1" "$2"
 }
 
 # --- Paths configuration ---
@@ -28,14 +33,12 @@ rsync -a ${MAME_SOURCE_DIR}/mame64 ${MAME_BIN_DIR}
 
 # --- Copy MAME INI file --------------------------------------------------------------------------
 echo "Installing MAME configuration files..."
-echo "Config file mame.ini"
-cp mame.ini ${MAME_CONFIG_DIR}
-echo "Config file ui.ini"
-cp ui.ini ${MAME_CONFIG_DIR}
-echo "Config file mame.ini.initial"
-cp mame.ini ${MAME_CONFIG_DIR}/mame.ini.initial
-echo "Config file ui.ini.initial"
-cp ui.ini ${MAME_CONFIG_DIR}/ui.ini.initial
+copyecho mame.ini ${MAME_CONFIG_DIR}
+copyecho ui.ini ${MAME_CONFIG_DIR}
+copyecho plugin.ini ${MAME_CONFIG_DIR}
+copyecho mame.ini ${MAME_CONFIG_DIR}/mame.ini.initial
+copyecho ui.ini ${MAME_CONFIG_DIR}/ui.ini.initial
+copyecho plugin.ini ${MAME_CONFIG_DIR}/plugin.ini.initial
 
 # --- Install MAME data ---------------------------------------------------------------------------
 echo "Installing MAME artwork..."
