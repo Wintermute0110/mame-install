@@ -36,9 +36,10 @@ echo "Installing MAME configuration files..."
 copyecho mame.ini ${MAME_CONFIG_DIR}
 copyecho ui.ini ${MAME_CONFIG_DIR}
 copyecho plugin.ini ${MAME_CONFIG_DIR}
-copyecho mame.ini ${MAME_CONFIG_DIR}/mame.ini.initial
-copyecho ui.ini ${MAME_CONFIG_DIR}/ui.ini.initial
-copyecho plugin.ini ${MAME_CONFIG_DIR}/plugin.ini.initial
+copyecho horizont.ini ${MAME_CONFIG_DIR}
+copyecho vertical.ini ${MAME_CONFIG_DIR}
+copyecho mame.ini $(readlink -m "${MAME_CONFIG_DIR}/mame.ini.initial")
+copyecho ui.ini $(readlink -m "${MAME_CONFIG_DIR}/ui.ini.initial")
 
 # --- Install MAME data ---------------------------------------------------------------------------
 echo "Installing MAME artwork..."
